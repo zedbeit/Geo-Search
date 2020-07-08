@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <header id="page-header">
+            <h1>Geo Search</h1>
+        </header>
+
+        <main id="content">
+            <div id="map-info">
+                <form id="search-form" action="">
+                    <input type="text" id="location-input" placeholder="Location">
+                    <input id="submit" type="submit" value="Submit">
+                </form>
+                <div id="map"></div>   
+            </div>
+            <div id="location-info">
+                <h3>Location Information</h3>
+                <p>Wind Speed: <span> 45</span></p>
+                <p>Humidity: <span> 4</span></p>
+                <p>Weather Conditions: <span>values</span></p>
+                <h3>Temperature: </h3>
+                <form id="temp-form" action="">
+                    <label for="celcius">Celcius <span class="unit">(&#8451;)</span>: </label>
+                    <input
+                    type="text"
+                    name="celcius"
+                    id="celcius"
+                    placeholder="Celcius Temperature"
+                    />
+                    <label for="fahrenheit">Fahrenheit <span class="unit">(&#8457;)</span>: </label>
+                    <input
+                    type="text"
+                    name="fahrenheit"
+                    id="fahrenheit"
+                    placeholder="Fahrenheit Temperature"
+                    />
+                </form>
+            </div>
+        </main>
+
+        <footer id="page-footer"><p>Created by Beita</p></footer>
+    </div>
+</body>
+</html>
