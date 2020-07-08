@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body, #container {
+    height: 100%;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+}
+#content {
+    display: flex;
+    flex: 1 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 1em;
+}
+#content #map-info {
+    flex: 1 0 65%;
+}
+#page-header {
+    font-size: 2.3em;
+    font-family: 'Bangers', cursive;
+    flex: 0 0 80px;
+    padding: 10px;  
+}
+#page-header h1 {
+    text-align: center;
+}
+#page-footer {
+    flex: 0 0 18px;
+    padding: 4px;
+}
+#page-footer p {
+    font-size: 1.2em;
+    text-align: center;
+}
+#search-form #location-input {
+    font-family: 'Open Sans', sans-serif;
+    padding: 1em 0.9em;
+    min-height: 44px;
+    width: 80%;
+    margin-right: -4px;
+}
+#search-form #submit {
+    padding: 0.23em 0.75em;
+    min-height: 44px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #272727;
+    cursor: pointer;
+    width: 17%;
+}
+#content #location-info {
+    padding-right: 0.9em;
+    flex: 1 0 25%;
+}
+#location-info #temp-form {
+    display: flex;
+    flex-direction: column;
+}
+#location-info #temp-form label {
+    line-height: 1.7;
+    font-weight: 600;
+}
+#location-info #temp-form input {
+    min-height: 30px;
+    padding: 4px;
+}
+
+#location-info h3 {
+    font-family: 'Bangers', cursive;
+    font-size: 1.5em;
+    line-height: 1.1;
+}
+#location-info p {
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 800px) {
+    #content {
+        flex-direction: column;
+    }
+    #content #map-info {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    #content #map-info #search-form {
+        flex: 0 0 40px;
+    }
+    #content #map-info #map {
+        flex: 1 0 auto;
+    }   
+    #content #location-info {
+        flex: 0 0 150px;
+        padding-left: 0.7em;
+    }
+
+    #location-info ul li {
+        display: flex;
+    }
+    #location-info #temp-form {
+        display: flex;
+        flex-direction: column;
+    }
+   
+    #location-info p {
+        line-height: 1.6;
+    }
+    
+    #search-form #location-input {
+        width: 100%;
+    }
+    #search-form #submit {
+        width: 100%;
+    }
+}
