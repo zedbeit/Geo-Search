@@ -51,10 +51,11 @@ html,body, #container {
     font-weight: bold;
     background-color: #272727;
     cursor: pointer;
-    width: 17%;
+    width: 19.7%;
 }
 #content #location-info {
     padding-right: 0.9em;
+    padding-left: 0.9em;
     flex: 1 0 25%;
 }
 #location-info #temp-form {
@@ -79,7 +80,9 @@ html,body, #container {
     line-height: 1.6;
     font-weight: 600;
 }
-
+#map {
+    height: 100%;
+}
 @media screen and (max-width: 800px) {
     #content {
         flex-direction: column;
