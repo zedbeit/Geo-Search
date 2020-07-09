@@ -6,6 +6,9 @@
     <title>App</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
     <div id="container">
@@ -19,7 +22,8 @@
                     <input type="text" id="location-input" placeholder="Location">
                     <input id="submit" type="submit" value="Submit">
                 </form>
-                <div id="map"></div>   
+                <!-- <div id='map' style='width: 400px; height: 300px;'></div>    -->
+                <div id="map"></div>
             </div>
             <div id="location-info">
                 <h3>Location Information</h3>
@@ -45,8 +49,17 @@
                 </form>
             </div>
         </main>
-
         <footer id="page-footer"><p>Created by Beita</p></footer>
+        
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiYmVpdGFkZXYiLCJhIjoiY2tjZWd3b2VqMDhiZjJ5bm5jeTh6eGNhdCJ9.fZbPXubKwQaC8lOGvO_jzw';
+            var map = new mapboxgl.Map({
+                container: "map",
+                style: "mapbox://styles/mapbox/dark-v10",
+                center: [9.08208, 8.6753],
+                zoom: 4 
+            });
+        </script>
     </div>
 </body>
 </html>
