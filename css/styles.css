@@ -5,120 +5,114 @@
 }
 html,body, #container {
     height: 100%;
-}
-#container {
-    display: flex;
-    flex-direction: column;
-}
-#content {
-    display: flex;
-    flex: 1 0 auto;
-    font-family: 'Open Sans', sans-serif;
-    padding-top: 1em;
-}
-#content #map-info {
-    flex: 1 0 65%;
-}
+}   
+/* Header */
 #page-header {
-    font-size: 2.3em;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Bangers', cursive;
-    flex: 0 0 80px;
-    padding: 10px;  
 }
 #page-header h1 {
-    text-align: center;
+    font-size: 2.7em;
 }
-#page-footer {
-    flex: 0 0 18px;
-    padding: 4px;
+/* Content */
+#content {
+    height: calc(100vh - 70px - 20px);
 }
-#page-footer p {
-    font-size: 1.2em;
-    text-align: center;
-}
-#search-form #location-input {
-    font-family: 'Open Sans', sans-serif;
-    padding: 1em 0.9em;
-    min-height: 44px;
-    width: 80%;
-    margin-right: -4px;
-}
-#search-form #submit {
-    padding: 0.23em 0.75em;
-    min-height: 44px;
-    border: none;
-    color: #fff;
-    font-weight: bold;
-    background-color: #272727;
-    cursor: pointer;
-    width: 19.7%;
-}
-#content #location-info {
-    padding-right: 0.9em;
-    padding-left: 0.9em;
-    flex: 1 0 25%;
-}
-#location-info #temp-form {
-    display: flex;
-    flex-direction: column;
-}
-#location-info #temp-form label {
-    line-height: 1.7;
-    font-weight: 600;
-}
-#location-info #temp-form input {
-    min-height: 30px;
-    padding: 4px;
-}
-
-#location-info h3 {
-    font-family: 'Bangers', cursive;
-    font-size: 1.5em;
-    line-height: 1.1;
-}
-#location-info p {
-    line-height: 1.6;
-    font-weight: 600;
+#content #map-info {
+    height: calc(100% - 150px);
 }
 #map {
-    height: 100%;
+    height: calc(100% - 35px);
 }
-@media screen and (max-width: 800px) {
+#search-form {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+}
+#search-form #location-input {
+    padding: 4px;
+    flex: 1;
+    height: 30px;
+}
+#search-form #submit {
+    height: 30px;
+    width: 100px;
+}
+#location-info {
+    color: #111;
+    font-weight: bolder;
+    margin-top: 6px;
+}
+#location-info h3 {
+    font-family: 'Bangers', cursive;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+#location-info p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8em;
+    line-height: 1.2;
+}
+#temp-form label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8em;
+}
+#temp-form label.celcius {
+ line-height: 1.9;   
+}
+#temp-form input {
+    width: 74%;
+}
+#temp-form input#celcius {
+    margin-left: 20px;
+}
+@media only screen and (min-width: 900px) {
     #content {
-        flex-direction: column;
+        display: flex;
+        /* padding-top: 1em; */
     }
     #content #map-info {
-        flex: 1 0 auto;
-        display: flex;
-        flex-direction: column;
+        flex: 1 0 75%;
+        height: 100%;
     }
-    #content #map-info #search-form {
-        flex: 0 0 40px;
-    }
-    #content #map-info #map {
-        flex: 1 0 auto;
-    }   
-    #content #location-info {
-        flex: 0 0 150px;
-        padding-left: 0.7em;
+    #map {
+        width: 100%;
+        height: calc(100% - 35px);
     }
 
-    #location-info ul li {
-        display: flex;
+    #location-info {
+        margin: 0;
+        padding: 0 10px;
     }
-    #location-info #temp-form {
-        display: flex;
-        flex-direction: column;
+    #location-info h3 {
+        font-size: 1.4em;
     }
-   
     #location-info p {
-        line-height: 1.6;
+        font-size: 1em;
+        line-height: 1.4;
     }
-    
-    #search-form #location-input {
+
+    #temp-form label {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1em;
+    }
+
+    #temp-form input {
+        height: 24px;
         width: 100%;
     }
-    #search-form #submit {
-        width: 100%;
+    #temp-form input#celcius {
+        margin-left: 0;
     }
+}
+/* Footer */
+#page-footer {
+    height: 20px;
+}
+#page-footer p {
+    font-family: 'Bangers', cursive;
+    font-size: 0.9em;
+    text-align: center;
 }
