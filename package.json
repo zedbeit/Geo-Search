@@ -1,0 +1,28 @@
+{
+  "name": "geo-search",
+  "version": "1.0.0",
+  "description": "Geo-Search is a tool that allows people to search for places and extract information",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zedbeit/Geo-Search.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zedbeit/Geo-Search/issues"
+  },
+  "homepage": "https://github.com/zedbeit/Geo-Search#readme",
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
+  "dependencies": {
+    "browserify": "^16.5.1",
+    "mapbox-gl": "^1.11.1"
+  }
+}
