@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <title>App</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
-
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
 </head>
 <body>
     <div id="container">
@@ -20,7 +19,7 @@
             <div id="map-info">
                 <form id="search-form" action="">
                     <input type="text" id="location-input" placeholder="Location">
-                    <input id="submit" type="submit" value="Submit">
+                    <input id="submit" type="submit" value="Search">
                 </form>
                 <div id="map"></div>
             </div>
@@ -49,16 +48,10 @@
             </div>
         </main>
         <footer id="page-footer"><p>Created by Beita</p></footer>
-        
-        <script>
-            mapboxgl.accessToken = 'pk.eyJ1IjoiYmVpdGFkZXYiLCJhIjoiY2tjZWd3b2VqMDhiZjJ5bm5jeTh6eGNhdCJ9.fZbPXubKwQaC8lOGvO_jzw';
-            var map = new mapboxgl.Map({
-                container: "map",
-                style: "mapbox://styles/mapbox/dark-v10",
-                center: [9.08208, 8.6753],
-                zoom: 4 
-            });
-        </script>
+
+        <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+        <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+        <script src="main.js"></script>
     </div>
 </body>
 </html>
