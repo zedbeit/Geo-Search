@@ -5,6 +5,9 @@
 }
 html,body, #container {
     height: 100%;
+}
+input {
+    padding: 4px;
 }   
 /* Header */
 #page-header {
@@ -32,7 +35,6 @@ html,body, #container {
     font-family: 'Open Sans', sans-serif;
 }
 #search-form #location-input {
-    padding: 4px;
     flex: 1;
     height: 30px;
 }
@@ -95,7 +97,6 @@ html,body, #container {
     }
 
     #temp-form label {
-        font-family: 'Open Sans', sans-serif;
         font-size: 1em;
     }
 
@@ -107,6 +108,19 @@ html,body, #container {
         margin-left: 0;
     }
 }
+@media screen and (min-width:500px) and (max-width:899px) {
+    #temp-form label {
+        display: inline-block;
+        width: 20%;
+    }
+    #temp-form input {
+        min-width: 70%;
+    }
+    #temp-form input#celcius {
+        margin-left: 0px;
+    }
+}
+
 /* Footer */
 #page-footer {
     height: 20px;
