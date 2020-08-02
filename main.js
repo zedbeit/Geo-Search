@@ -1,12 +1,13 @@
-var windSpeed = document.getElementById('windSpeed');
-var humidity = document.getElementById('humidity');
-var weather = document.getElementById('weather');
+const windSpeed = document.getElementById('windSpeed');
+const humidity = document.getElementById('humidity');
+const weather = document.getElementById('weather');
+const celsiusInput = document.getElementById('celcius');
+const fahrenheitInput = document.getElementById('fahrenheit');
 
 document.getElementById('search-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    // console.log('success!');
-
-    var location = document.getElementById('location-input').value;
+    
+    const location = document.getElementById('location-input').value;
 
     if(!location) {
        return alert('please provide a location.')
@@ -20,7 +21,6 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
         })
         .send()
         .then(function (response) {
-            // console.log(response.body.features[]);
             if (response && response.body && response.body.features && response.body.features.length) {
                 var feature = response.body.features[0];
                 setMap(feature.center);
@@ -31,11 +31,25 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
             }
         });
 });
+//Event Handling 
+celsiusInput.addEventListener('input', () => {
+    const temp = celsiusInput.value
+    const fahrenheit = tryConvert(temp, toFahrenheit);
+    fahrenheitInput.value = fahrenheit;
+});
+
+fahrenheitInput.addEventListener('input', () => {
+    const temp = fahrenheitInput.value
+    const celsius = tryConvert(temp, toCelsius);
+    celsiusInput.value = celsius;
+});
+
 // Functions
 function startMap() {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYmVpdGFkZXYiLCJhIjoiY2tjZWd3b2VqMDhiZjJ5bm5jeTh6eGNhdCJ9.fZbPXubKwQaC8lOGvO_jzw';
     setMap([-74.5, 40]);
 }
+
 function setMap(center) {
     var map = new mapboxgl.Map({
         container: 'map',
@@ -45,8 +59,9 @@ function setMap(center) {
     });
     new mapboxgl.Marker({ color: '#fff' }).setLngLat(center).addTo(map);
 }
+
 function weatherForecast(lat, lon) {
-    var appid = '8a673c08c3fa2d3cda1388596985f388';
+    const appid = '8a673c08c3fa2d3cda1388596985f388';
 
     fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+appid)
         .then(response => response.json())
@@ -57,9 +72,23 @@ function weatherForecast(lat, lon) {
             humidity.style.color = 'red';
             windSpeed.style.color = 'red';
             weather.style.color = 'red';
-        })
-        .catch((error) => {
-            console.log('Error:', error);
         });
+}
+ 
+function toFahrenheit(celsius) {
+return (celsius * 9 / 5) + 32;
+}
+
+function toCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9;
+}
+
+function tryConvert(temperature, convert) {
+    const input = parseFloat(temperature);
+    if (Number.isNaN(input)) {
+        return '';
+    }
+    const output = convert(input).toFixed(1);
+    return output;
 }
 window.addEventListener('load', startMap);
