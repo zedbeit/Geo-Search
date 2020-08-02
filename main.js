@@ -53,9 +53,9 @@ function startMap() {
 function setMap(center) {
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v10',
+        style: 'mapbox://styles/mapbox/outdoors-v11',
         center: center,
-        zoom: 12
+        zoom: 8
     });
     new mapboxgl.Marker({ color: '#fff' }).setLngLat(center).addTo(map);
 
