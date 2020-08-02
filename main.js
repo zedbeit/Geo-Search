@@ -47,7 +47,7 @@ fahrenheitInput.addEventListener('input', () => {
 // Functions
 function startMap() {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYmVpdGFkZXYiLCJhIjoiY2tjZWd3b2VqMDhiZjJ5bm5jeTh6eGNhdCJ9.fZbPXubKwQaC8lOGvO_jzw';
-    setMap([-74.5, 40]);
+    setMap([3.4, 6.45]);
 }
 
 function setMap(center) {
@@ -58,6 +58,8 @@ function setMap(center) {
         zoom: 12
     });
     new mapboxgl.Marker({ color: '#fff' }).setLngLat(center).addTo(map);
+
+    weatherForecast(center[1],center[0]);
 }
 
 function weatherForecast(lat, lon) {
@@ -66,9 +68,14 @@ function weatherForecast(lat, lon) {
     fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+appid)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             humidity.textContent = data.main.humidity;
             windSpeed.textContent = data.wind.speed;
             weather.textContent = data.weather[0].main +', '+ data.weather[0].description;
+
+            celsiusInput.value = data.main.temp;
+            fahrenheitInput.value = toFahrenheit(celsiusInput.value);
+
             humidity.style.color = 'red';
             windSpeed.style.color = 'red';
             weather.style.color = 'red';

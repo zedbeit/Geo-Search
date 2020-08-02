@@ -5,6 +5,9 @@
 }
 html,body, #container {
     height: 100%;
+}
+input {
+    padding: 4px;
 }   
 /* Header */
 #page-header {
@@ -32,7 +35,6 @@ html,body, #container {
     font-family: 'Open Sans', sans-serif;
 }
 #search-form #location-input {
-    padding: 4px;
     flex: 1;
     height: 30px;
 }
