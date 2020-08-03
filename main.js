@@ -24,8 +24,6 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
             if (response && response.body && response.body.features && response.body.features.length) {
                 var feature = response.body.features[0];
                 setMap(feature.center);
-
-                weatherForecast(feature.center[1], feature.center[0]);
             } else {
                 alert('Invalid Request!');
             }
