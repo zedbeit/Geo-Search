@@ -24,6 +24,8 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
             if (response && response.body && response.body.features && response.body.features.length) {
                 var feature = response.body.features[0];
                 setMap(feature.center);
+                
+                weatherForecast(feature.center[1], feature.center[0]);
             } else {
                 alert('Invalid Request!');
             }
@@ -56,8 +58,6 @@ function setMap(center) {
         zoom: 8
     });
     new mapboxgl.Marker({ color: '#fff' }).setLngLat(center).addTo(map);
-
-    weatherForecast(center[1],center[0]);
 }
 
 function weatherForecast(lat, lon) {
